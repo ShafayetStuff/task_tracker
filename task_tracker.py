@@ -5,13 +5,13 @@ import time
 #database
 tasks=[{"name":"", "is_done": False}]
 tasks_list= 'tasks_list.json'
-if os.path.exists(tasks_list): #checking existence of the furry porn
-    with open(tasks_list, "r") as f: #this guy sees the file
+if os.path.exists(tasks_list):
+    with open(tasks_list, "r") as f:
         content = f.read()
         if content:
-            tasks = json.loads(content) #goons on tasks after seeing it
+            tasks = json.loads(content)
         else:
-            tasks=[] #if bro doesnt see it he jus stays calm and quiet
+            tasks=[]
 else:
     tasks=[] # bro said no comment
 url = 'https://www.youtube.com/watch?v=KxGRhd_iWuE' # I guess we will never know -Kanye West
@@ -39,7 +39,7 @@ def show_tasks():
             "Start by adding a tasks through edit tasks"
         )
     for i,task in enumerate(tasks, start=1):
-        status = "✓" if task["is_done"] else "x"
+        status = "✓" if task["is_done"] else "X"
         print(f"[{i}][{status}] {task["name"]}")
     print("\n")
 
@@ -57,7 +57,7 @@ def edit_tasks():
     edit_tasks_input = input("Another one: ")
 edit_tasks_input="" 
 def iam_cooked():
-    webbrowser.open(url) #it is what it says
+    webbrowser.open(url) 
     
 #edit options-------
 def add_tasks():
@@ -66,7 +66,7 @@ def add_tasks():
         add_task=input("Add task or enter 2 to exit: ")
         if add_task == '2':
             break
-        tasks.append({"name": add_task, "is_done": False}) # add to the tasks
+        tasks.append({"name": add_task, "is_done": False}) 
 def done_tasks():
     print ("\n")
     for i , task in enumerate(tasks, start=1):
@@ -87,7 +87,7 @@ def del_tasks():
         try:
             number = int(choice)
         except ValueError:
-            print("\n !!!!!!!You blind bro? thats not a number!!!!!!! \n" ) #thanks to claude bruh for the code
+            print("\n !!!!!!!You blind bro? thats not a number!!!!!!! \n" ) 
             time.sleep(0.5)
             continue
         if number < 0 or number > len(tasks): 
@@ -105,7 +105,7 @@ def markDone_task():
         try:
             number = int(choice)
         except ValueError:
-            print("\n !!!!!!!You blind bro? thats not a number!!!!!!! \n" ) #thanks to claude bruh for the code
+            print("\n !!!!!!!You blind bro? thats not a number!!!!!!! \n" ) 
             time.sleep(0.5)
             continue
         if number < 0 or number > len(tasks): 
@@ -123,7 +123,7 @@ def markRemain_task():
         try:
             number = int(choice)
         except ValueError:
-            print("\n !!!!!!!You blind bro? thats not a number!!!!!!! \n" ) #thanks to claude bruh for the code
+            print("\n !!!!!!!You blind bro? thats not a number!!!!!!! \n" ) 
             time.sleep(0.5)
             continue
         if number < 0 or number > len(tasks): 
@@ -163,4 +163,4 @@ match edit_tasks_input:
     
 #executions#
 with open(tasks_list, "w") as f:
-    json.dump(tasks, f) #tasks takes the goon and shoves it on json's ass with some of his
+    json.dump(tasks, f)
